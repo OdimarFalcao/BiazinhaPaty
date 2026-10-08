@@ -3,13 +3,8 @@
   "framework": null,
   "installCommand": "echo No dependencies to install",
   "rewrites": [
-    { "source": "/", "destination": "/public/invite.html" },
-    { "source": "/invite", "destination": "/public/invite.html" },
-    { "source": "/styles.css", "destination": "/public/styles.css" },
-    { "source": "/app.js", "destination": "/public/app.js" },
-    { "source": "/favicon.svg", "destination": "/public/favicon.svg" },
-    { "source": "/bia-dj-sprite-v2.png", "destination": "/public/bia-dj-sprite-v2.png" },
-    { "source": "/pixel-dj.svg", "destination": "/public/pixel-dj.svg" }
+    { "source": "/", "destination": "/invite.html" },
+    { "source": "/invite", "destination": "/invite.html" }
   ],
   "headers": [
     {
