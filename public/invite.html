@@ -95,28 +95,30 @@
           <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         </div>
 
-        <form class="vote-card" id="voteForm">
+        <form class="vote-card" id="voteForm" novalidate>
           <div class="form-head"><span>VOTA AÍ!</span><b>BIA ✦</b></div>
-          <label class="field">Seu nome<input name="name" type="text" placeholder="como a Bia te chama?" autocomplete="name" required></label>
+          <label class="field">Seu nome<input name="name" type="text" placeholder="como a Bia te chama?" autocomplete="name" maxlength="40" required></label>
 
-          <fieldset>
-            <legend>Onde você consegue ir?</legend>
-            <div class="choice-row vote-options">
-              <label><input type="radio" name="choice" value="Consigo ir na quinta" required><span>Consigo ir na quinta</span></label>
-              <label><input type="radio" name="choice" value="Consigo ir sábado pra serra"><span>Consigo ir sábado pra serra</span></label>
-              <label><input type="radio" name="choice" value="Consigo ir nos dois"><span>Consigo ir nos dois</span></label>
-              <label><input type="radio" name="choice" value="Não consigo ir"><span>Não consigo ir</span></label>
+          <div class="poll" aria-labelledby="pollTitle">
+            <h3 class="poll-title" id="pollTitle">Onde você consegue ir?</h3>
+            <p class="poll-hint"><span aria-hidden="true">◉</span> Toque numa opção pra votar · dá pra trocar depois</p>
+            <div class="poll-options" id="pollOptions" role="radiogroup" aria-labelledby="pollTitle">
+              <button type="button" class="poll-option" data-option="Consigo ir na quinta"><span class="poll-row"><span class="poll-check"></span><span class="poll-label">Consigo ir na quinta</span><span class="poll-count">0</span></span><span class="poll-bar"><i></i></span></button>
+              <button type="button" class="poll-option" data-option="Consigo ir sábado pra serra"><span class="poll-row"><span class="poll-check"></span><span class="poll-label">Consigo ir sábado pra serra</span><span class="poll-count">0</span></span><span class="poll-bar"><i></i></span></button>
+              <button type="button" class="poll-option" data-option="Consigo ir nos dois"><span class="poll-row"><span class="poll-check"></span><span class="poll-label">Consigo ir nos dois</span><span class="poll-count">0</span></span><span class="poll-bar"><i></i></span></button>
+              <button type="button" class="poll-option" data-option="Não consigo ir"><span class="poll-row"><span class="poll-check"></span><span class="poll-label">Não consigo ir</span><span class="poll-count">0</span></span><span class="poll-bar"><i></i></span></button>
             </div>
-          </fieldset>
-          <button class="submit" type="submit">enviar meu voto <span>↗</span></button>
-          <p class="form-note">Seu voto vai para a lista da Bia e uma cópia fica neste navegador.</p>
+            <p class="poll-meta" id="pollMeta">carregando votos…</p>
+            <p class="poll-status" id="pollStatus" role="status" aria-live="polite"></p>
+            <button class="poll-view" id="viewVotes" type="button">ver votos</button>
+          </div>
         </form>
       </div>
     </section>
 
     <section class="after wrap">
       <div><span>03 / depois do voto</span><h2>Agora é só<br><em>encontrar a Bia.</em></h2></div>
-      <button class="outline" id="exportMine" type="button">baixar meu voto em CSV ↓</button>
+      <button class="outline" id="exportMine" type="button">baixar lista de votos (CSV) ↓</button>
     </section>
   </main>
 
@@ -124,7 +126,14 @@
 
   <dialog id="successDialog">
     <button class="dialog-close" aria-label="Fechar">×</button>
-    <div class="mini-sun"></div><p>VOTO RECEBIDO</p><h2>Nos vemos<br>no <em>sunset.</em></h2><small>Seu voto entrou na lista da Bia ✦</small>
+    <div class="mini-sun"></div><p>VOTO RECEBIDO</p><h2>Nos vemos<br>no <em>sunset.</em></h2><small>Seu voto já aparece pra todo mundo ✦</small>
+  </dialog>
+
+
+  <dialog id="votersDialog" class="voters-dialog">
+    <button class="dialog-close" aria-label="Fechar">×</button>
+    <h2>Quem <em>vai?</em></h2>
+    <div id="votersList"></div>
   </dialog>
 
   <script src="app.js"></script>

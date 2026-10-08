@@ -11,3 +11,42 @@
 .hero-dj-sprite{position:absolute;z-index:2;left:50%;bottom:20px;width:min(100%,480px);height:630px;transform:translateX(-50%);background-image:url('/bia-dj-sprite-v2.png');background-repeat:no-repeat;background-size:400% 100%;background-position:0 0;image-rendering:pixelated;filter:drop-shadow(0 20px 18px rgba(39,33,59,.24));animation:djSprite 1.5s step-end infinite}.portrait-scene:after{content:"";position:absolute;z-index:1;left:8%;right:5%;bottom:44px;height:120px;background:linear-gradient(90deg,#f6afcc,#bda8ea,#9fd9d0);border:3px solid var(--ink);box-shadow:8px 8px 0 rgba(39,33,59,.28)}@keyframes djSprite{0%,24.99%{background-position:0 0}25%,49.99%{background-position:33.333% 0}50%,74.99%{background-position:66.666% 0}75%,100%{background-position:100% 0}}
 .portrait-scene:after{display:none}
 @media(max-width:900px){.hero-dj-sprite{height:520px;width:398px;bottom:5px}}@media(max-width:560px){.hero-dj-sprite{height:500px;width:382px;bottom:0}.portrait-scene:after{left:0;right:0;bottom:25px;height:90px}}
+
+/* ---------- enquete estilo WhatsApp ---------- */
+.field.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.poll-title{font:700 20px/1.25 "DM Sans";margin:0 0 6px}
+.poll-hint{font-size:12px;color:#7b7180;margin:0 0 18px;display:flex;gap:6px;align-items:center}
+.poll-hint span{color:var(--violet)}
+.poll-options{display:grid;gap:6px}
+.poll-option{all:unset;box-sizing:border-box;display:block;width:100%;padding:12px 8px 14px;cursor:pointer;border-radius:10px;transition:background .15s}
+.poll-option:hover{background:rgba(39,33,59,.05)}
+.poll-option:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.poll-row{display:flex;align-items:center;gap:12px}
+.poll-check{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid #8a8195;display:grid;place-items:center;transition:.15s}
+.poll-option.is-mine .poll-check{border-color:var(--violet);background:var(--violet)}
+.poll-option.is-mine .poll-check:after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:translateY(-1px) rotate(45deg)}
+.poll-label{flex:1;font-size:15px;font-weight:600;line-height:1.3}
+.poll-faces{display:flex;flex-direction:row-reverse}
+.poll-faces .avatar{width:22px;height:22px;font-size:9px;margin-left:-7px;border:2px solid var(--cream)}
+.poll-count{min-width:18px;text-align:right;font-weight:700;font-size:14px}
+.poll-bar{display:block;height:7px;margin:10px 0 0 34px;border-radius:99px;background:rgba(39,33,59,.1);overflow:hidden}
+.poll-bar i{display:block;height:100%;width:0;border-radius:inherit;background:var(--lilac);transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.poll-option.is-leading .poll-bar i{background:var(--peach)}
+.poll-option.is-mine .poll-bar i{background:var(--violet)}
+.poll-meta{font-size:12px;color:#7b7180;text-align:right;margin:14px 0 0}
+.poll-status{min-height:1.2em;font-size:13px;font-weight:600;color:var(--violet);margin:6px 0 0}
+.poll-view{display:block;width:100%;margin-top:12px;padding:16px;border:0;border-top:1.5px solid var(--line);background:transparent;color:var(--violet);font:700 13px "DM Sans";letter-spacing:1.5px;text-transform:uppercase;cursor:pointer}
+.poll-view:hover{color:var(--ink)}
+.avatar{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:700 12px "DM Sans";color:var(--ink)}
+/* diálogo "ver votos" */
+.voters-dialog{text-align:left;padding:40px 30px 30px;width:min(470px,calc(100% - 30px));max-height:85vh}
+.voters-dialog h2{font-size:40px;margin:0 0 22px}
+.voters-group{border-top:1.5px solid var(--line);padding:16px 0 8px}
+.voters-group header{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:14px;margin-bottom:10px}
+.voters-group header b{font-weight:500;color:#7b7180;white-space:nowrap}
+.voter{display:flex;align-items:center;gap:12px;padding:6px 0}
+.voter-name{flex:1;font-weight:600}
+.voter small{color:#7b7180;font-size:11px}
+.voters-empty{color:#7b7180;font-size:13px;letter-spacing:0 !important;margin:0 0 8px}
+@media(prefers-reduced-motion:reduce){.poll-bar i{transition:none}.field.shake{animation:none}}
