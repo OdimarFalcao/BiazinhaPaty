@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "echo No dependencies to install",
+  "rewrites": [
+    { "source": "/", "destination": "/public/invite.html" },
+    { "source": "/invite", "destination": "/public/invite.html" },
+    { "source": "/styles.css", "destination": "/public/styles.css" },
+    { "source": "/app.js", "destination": "/public/app.js" },
+    { "source": "/favicon.svg", "destination": "/public/favicon.svg" },
+    { "source": "/bia-dj-sprite-v2.png", "destination": "/public/bia-dj-sprite-v2.png" },
+    { "source": "/pixel-dj.svg", "destination": "/public/pixel-dj.svg" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    }
+  ]
+}

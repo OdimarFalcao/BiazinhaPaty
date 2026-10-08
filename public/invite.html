@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7a98c">
+  <meta name="description" content="Convite interativo da Bia — uma sunset party para celebrar, dançar e ver o céu mudar de cor.">
+  <title>Bia's Sunset Party</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700&family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="hero" id="topo">
+    <nav class="nav wrap" aria-label="Navegação principal">
+      <a class="logo" href="#topo" aria-label="Início">BIA<span>✦</span></a>
+      <a class="nav-cta" href="#vote">confirmar presença <span>↘</span></a>
+    </nav>
+
+    <div class="sky" aria-hidden="true">
+      <span class="star s1">✦</span><span class="star s2">✦</span><span class="star s3">·</span>
+      <div class="sun"></div>
+      <div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+      <div class="sea"><i></i><i></i><i></i><i></i></div>
+    </div>
+
+    <div class="hero-grid wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> sunset loading…</p>
+        <h1>Bia's<br><em>Sunset</em><br>Party</h1>
+        <p class="intro">Genteee, chegou o meu dia! (feriado mundial). Dia 15, quinta-feira, é meu aniversário e eu quero comemorar com os mais chegados.</p>
+        <a class="primary" href="#vote">vota aí pra Bia saber <span>↓</span></a>
+      </div>
+
+      <div class="portrait-scene" aria-label="Animação em pixel art da Bia tocando como DJ" role="img">
+        <div class="hero-dj-sprite" aria-hidden="true"></div>
+        <svg class="dj-loop" viewBox="0 0 620 650" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle class="dj-halo halo-a" cx="315" cy="278" r="238"/>
+          <circle class="dj-halo halo-b" cx="315" cy="278" r="190"/>
+          <g class="dj-stars"><text x="68" y="150">✦</text><text x="520" y="220">✦</text><text x="505" y="95">✦</text></g>
+          <g class="dj-girl">
+            <path class="dj-hair-back" d="M215 120c12-82 177-94 205 15 11 43-9 117-29 150H237c-24-43-33-113-22-165Z"/>
+            <path class="dj-neck" d="M282 268h67l13 83h-96l16-83Z"/>
+            <path class="dj-body" d="M197 355c38-45 83-53 118-53 49 0 102 14 127 59l32 182H157l40-188Z"/>
+            <path class="dj-top" d="M192 397c19-52 64-70 119-38 53-32 105-7 124 40l12 140H171l21-142Z"/>
+            <ellipse class="dj-face" cx="316" cy="205" rx="91" ry="108" transform="rotate(-5 316 205)"/>
+            <path class="dj-fringe" d="M225 194c0-105 72-132 142-103 37 15 54 45 53 81-36-1-73-31-86-57-18 42-61 71-109 79Z"/>
+            <g class="dj-headphones"><path d="M235 183c-9-116 174-139 179-8"/><rect x="222" y="174" width="30" height="70" rx="15"/><rect x="397" y="169" width="30" height="70" rx="15"/></g>
+            <g class="dj-shades"><path d="M244 190h66l-5 45c-34 16-61 0-61-45Z"/><path d="M320 190h72c1 44-31 62-67 45l-5-45Z"/><path d="M306 201h18"/></g>
+            <path class="dj-nose" d="M318 218l-8 31 17 2"/><path class="dj-lips" d="M294 274c17 12 36 10 51-4-17 28-39 28-51 4Z"/>
+            <ellipse class="dj-earring" cx="233" cy="250" rx="14" ry="27"/>
+            <g class="dj-arm-left"><path d="M211 368c-52 37-74 99-60 141 12 35 65 28 75-8l48-108-63-25Z"/><ellipse cx="158" cy="509" rx="35" ry="24"/></g>
+            <g class="dj-arm-right"><path d="M414 367c45 26 69 78 63 124-5 37-55 40-70 7l-45-104 52-27Z"/><ellipse cx="459" cy="499" rx="35" ry="24"/></g>
+          </g>
+          <g class="dj-booth">
+            <path d="M63 492h495l-24 139H86L63 492Z"/>
+            <g class="deck deck-left"><circle cx="185" cy="548" r="62"/><circle cx="185" cy="548" r="42"/><path d="M185 506v84M143 548h84"/></g>
+            <g class="deck deck-right"><circle cx="438" cy="548" r="62"/><circle cx="438" cy="548" r="42"/><path d="M438 506v84M396 548h84"/></g>
+            <g class="mixer"><rect x="274" y="512" width="76" height="82" rx="8"/><path d="M291 526v48M312 526v48M333 526v48"/><circle cx="291" cy="584" r="5"/><circle cx="312" cy="584" r="5"/><circle cx="333" cy="584" r="5"/></g>
+            <g class="booth-eq"><rect x="105" y="611" width="12" height="8"/><rect x="122" y="601" width="12" height="18"/><rect x="139" y="592" width="12" height="27"/><rect x="156" y="603" width="12" height="16"/><rect x="173" y="587" width="12" height="32"/></g>
+          </g>
+        </svg>
+        <div class="sticker">pixel<br>party<br><b>on</b></div>
+      </div>
+    </div>
+    <div class="marquee" aria-hidden="true"><div>GOOD MUSIC ✦ GOLDEN HOUR ✦ BIRTHDAY ENERGY ✦ GOOD MUSIC ✦ GOLDEN HOUR ✦ BIRTHDAY ENERGY ✦</div></div>
+  </header>
+
+  <main>
+    <section class="manifesto wrap">
+      <p class="section-kicker">01 / o plano</p>
+      <div>
+        <h2>Quinta tem festa.<br>Sábado tem <em>serra.</em></h2>
+        <p>Quero todo mundo lá pra comemorar comigo, comer, beber e se passar. E sábado tem mais, se quiser... mas vão sim!</p>
+      </div>
+      <div class="vinyl" aria-hidden="true"><span>BIA</span></div>
+    </section>
+
+    <section class="details">
+      <div class="wrap cards">
+        <article class="detail-card peach"><span>☀</span><p>quinta - dia 15</p><h3>Bar do<br>Cazuza</h3><small>19h30 - comemoração de aniversário</small></article>
+        <article class="detail-card lilac"><span>⌁</span><p>sábado - dia 17</p><h3>Subir<br>a serra</h3><small>pela manhã - e vão sim!</small></article>
+        <article class="detail-card mint"><span>♫</span><p>dois momentos</p><h3>Bia linda quer<br>todo mundo lá!</h3><small>marque abaixo onde você consegue ir</small></article>
+      </div>
+    </section>
+
+    <section class="vote-section" id="vote">
+      <div class="wrap vote-layout">
+        <div class="vote-copy">
+          <p class="section-kicker">02 / sua vez</p>
+          <h2>Vota aí<br>pra Bia <em>linda.</em></h2>
+          <p>Quero muito saber quem consegue ir em cada momento.</p>
+          <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+
+        <form class="vote-card" id="voteForm">
+          <div class="form-head"><span>VOTA AÍ!</span><b>BIA ✦</b></div>
+          <label class="field">Seu nome<input name="name" type="text" placeholder="como a Bia te chama?" autocomplete="name" required></label>
+
+          <fieldset>
+            <legend>Onde você consegue ir?</legend>
+            <div class="choice-row vote-options">
+              <label><input type="radio" name="choice" value="Consigo ir na quinta" required><span>Consigo ir na quinta</span></label>
+              <label><input type="radio" name="choice" value="Consigo ir sábado pra serra"><span>Consigo ir sábado pra serra</span></label>
+              <label><input type="radio" name="choice" value="Consigo ir nos dois"><span>Consigo ir nos dois</span></label>
+              <label><input type="radio" name="choice" value="Não consigo ir"><span>Não consigo ir</span></label>
+            </div>
+          </fieldset>
+          <button class="submit" type="submit">enviar meu voto <span>↗</span></button>
+          <p class="form-note">Seu voto vai para a lista da Bia e uma cópia fica neste navegador.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="after wrap">
+      <div><span>03 / depois do voto</span><h2>Agora é só<br><em>encontrar a Bia.</em></h2></div>
+      <button class="outline" id="exportMine" type="button">baixar meu voto em CSV ↓</button>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><div class="logo">BIA<span>✦</span></div><p>feito para celebrar a luz dela.</p><a href="#topo">voltar ao céu ↑</a></div></footer>
+
+  <dialog id="successDialog">
+    <button class="dialog-close" aria-label="Fechar">×</button>
+    <div class="mini-sun"></div><p>VOTO RECEBIDO</p><h2>Nos vemos<br>no <em>sunset.</em></h2><small>Seu voto entrou na lista da Bia ✦</small>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
