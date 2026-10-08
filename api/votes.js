@@ -4,8 +4,13 @@
 // as variáveis KV_REST_API_URL e KV_REST_API_TOKEN (ou UPSTASH_REDIS_REST_*).
 // Sem essas variáveis (ex.: rodando local), cai num Map em memória só para testes.
 
-const REDIS_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-const REDIS_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+// Procura as variáveis do Upstash mesmo que tenham sido criadas com um prefixo
+// personalizado (ex.: STORAGE_KV_REST_API_URL) — o nome muda conforme a integração.
+const findEnv = (re) => Object.keys(process.env).filter((k) => re.test(k) && process.env[k]).sort((a, b) => a.length - b.length)[0];
+const URL_VAR = findEnv(/(KV_REST_API_URL|REDIS_REST_URL)$/);
+const TOKEN_VAR = findEnv(/(KV_REST_API_TOKEN|REDIS_REST_TOKEN)$/);
+const REDIS_URL = URL_VAR && process.env[URL_VAR];
+const REDIS_TOKEN = TOKEN_VAR && process.env[TOKEN_VAR];
 const KEY = "bia:votes"; // hash: campo = nome normalizado, valor = JSON do voto
 
 const OPTIONS = [
@@ -56,6 +61,8 @@ function summary(votes) {
     total: votes.length,
     votes: votes.map(({ name, choice, at }) => ({ name, choice, at })),
     storage: REDIS_URL ? "redis" : "memory",
+    // diagnóstico: só os NOMES das variáveis ligadas a KV/Redis (nunca os valores)
+    ...(REDIS_URL ? {} : { envSeen: Object.keys(process.env).filter((k) => /KV|REDIS|UPSTASH/i.test(k)) }),
   };
 }
 
